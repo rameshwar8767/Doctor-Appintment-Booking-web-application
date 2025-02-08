@@ -56,6 +56,80 @@
   - Social media links
   - Copyright information
 
+### 6. Appointments Component (`Appointments.jsx`)
+- **Purpose**: Handle doctor appointment bookings
+- **Key Features**:
+  - Doctor profile display
+  - Dynamic slot generation
+  - Interactive booking calendar
+  - Time slot selection
+
+#### State Management
+- **Local States**:
+  ```javascript
+  docInfo       // Stores doctor information
+  docSlot       // Manages available time slots
+  slotIndex     // Tracks selected day
+  slotTime      // Selected appointment time
+  ```
+
+#### Core Functions
+1. **fetchDocInfo()**
+   - Retrieves doctor details from context
+   - Filters based on URL parameter
+   - Updates doctor information state
+
+2. **getAvailableSlots()**
+   - Generates 7-day booking window
+   - Creates 30-minute interval slots
+   - Handles time restrictions:
+     - Current day: Starts from next hour
+     - Future days: Full day slots
+   - Business hours: 10 AM - 9 PM
+
+#### UI Components
+1. **Doctor Profile Section**
+   - Profile image
+   - Name with verification badge
+   - Qualifications
+   - Speciality
+   - Experience
+   - About section
+   - Appointment fee
+
+2. **Booking Interface**
+   - **Date Selection**:
+     - 7-day calendar view
+     - Day name and date display
+     - Active day highlighting
+   - **Time Slots**:
+     - 30-minute intervals
+     - Visual selection feedback
+     - Scrollable interface
+   - **Booking Action**:
+     - Confirmation button
+     - Fee display
+
+#### Implementation Details
+- **Data Flow**:
+  ```
+  URL Params → Doctor Info → Available Slots → User Selection → Booking
+  ```
+- **Responsive Design**:
+  - Flexible layout system
+  - Mobile-first approach
+  - Adaptive grid structure
+
+#### Technical Specifications
+- **Dependencies**:
+  - React Router (useParams)
+  - Context API
+  - Date manipulation
+- **Styling**:
+  - Tailwind classes
+  - Custom responsive utilities
+  - Dynamic state classes
+
 ## 🔧 Technical Implementation
 
 ### Routing Structure
