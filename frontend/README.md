@@ -130,6 +130,96 @@
   - Custom responsive utilities
   - Dynamic state classes
 
+### Enhanced Appointments Component Details
+#### Advanced Features
+1. **Slot Generation Logic**:
+   ```javascript
+   - Business hours: 10 AM - 9 PM
+   - Dynamic start time for current day
+   - 30-minute slot intervals
+   - 7-day advance booking
+   ```
+
+2. **Data Validation**:
+   - Doctor existence check
+   - Valid time slot verification
+   - Date boundary checks
+
+3. **User Interface Improvements**:
+   - Interactive calendar
+   - Visual slot selection
+   - Responsive layout adjustments
+   - Profile card design
+
+4. **Integration Points**:
+   - Context API connection
+   - Route parameter handling
+   - RelatedDoctors component
+   - Asset management
+
+### 7. About Page (`About.jsx`)
+- **Purpose**: Company information and value proposition
+- **Key Features**:
+  - Company overview
+  - Value propositions
+  - Interactive cards
+- **Layout Structure**:
+  - Header section
+  - Main content with image
+  - Features grid
+- **UI Components**:
+  1. **Header**:
+     - Title with styling
+     - Responsive text layout
+  2. **Main Content**:
+     - Company image
+     - Description text
+     - Responsive flex layout
+  3. **Feature Cards**:
+     - Interactive hover effects
+     - Three main value propositions:
+       - Efficiency
+       - Convenience
+       - Personalization
+     - Consistent styling with primary colors
+
+### 8. RelatedDoctors Component (`RelatedDoctors.jsx`)
+- **Purpose**: Display related doctors based on speciality
+- **Props**:
+  ```javascript
+  speciality   // Doctor's speciality for filtering
+  docId        // Current doctor's ID to exclude
+  ```
+- **Features**:
+  - Filtered doctor list
+  - Interactive cards
+  - Navigation integration
+  - Responsive grid layout
+
+#### Implementation Details
+1. **State Management**:
+   ```javascript
+   const [relDoc, setRelDocs] = useState([])  // Stores filtered doctors
+   ```
+
+2. **Data Filtering**:
+   - Filters doctors by speciality
+   - Excludes current doctor
+   - Limited to 5 doctors display
+
+3. **UI Elements**:
+   - Doctor cards with:
+     - Profile image
+     - Availability status
+     - Name and speciality
+     - Hover animations
+   - "More" button for full listing
+
+4. **Navigation**:
+   - Click handlers for doctor cards
+   - Smooth scrolling behavior
+   - Route management
+
 ## 🔧 Technical Implementation
 
 ### Routing Structure
