@@ -427,3 +427,115 @@ npm run build
 - [ ] Doctor reviews
 - [ ] Appointment reminders
 - [ ] Medical history
+
+## 🔐 Authentication System
+
+### Components Overview
+
+#### 1. Login Component (`Login.jsx`)
+- **Purpose**: User authentication interface
+- **State Management**:
+  ```javascript
+  email        // User email
+  password     // User password
+  ```
+- **Key Features**:
+  - Email/password validation
+  - Error handling
+  - Redirect after login
+  - Password recovery link
+  - Sign up redirect
+- **Form Elements**:
+  - Email input field
+  - Password input field
+  - Login button
+  - Forgot password link
+  - Sign up link
+
+#### 2. Signup Component (`Signup.jsx`)
+- **Purpose**: New user registration
+- **State Management**:
+  ```javascript
+  name             // User's full name
+  email            // User email
+  password         // User password
+  confirmPassword  // Password confirmation
+  ```
+- **Key Features**:
+  - Form validation
+  - Password matching
+  - Input sanitization
+  - Automatic login after signup
+  - Login redirect for existing users
+- **Form Elements**:
+  - Full name input
+  - Email input
+  - Password input
+  - Confirm password input
+  - Create account button
+  - Login redirect link
+
+### Authentication Flow
+1. **Login Process**:
+   ```
+   Input Validation → API Call → Token Storage → Redirect
+   ```
+   
+2. **Signup Process**:
+   ```
+   Form Validation → Data Sanitization → API Call → Auto Login → Redirect
+   ```
+
+3. **Session Management**:
+   - JWT token storage
+   - Token refresh mechanism
+   - Auto logout on expiry
+   - Secure cookie handling
+
+### Security Measures
+1. **Input Validation**:
+   - Email format checking
+   - Password strength requirements
+   - XSS prevention
+   - SQL injection protection
+
+2. **Data Protection**:
+   - Password hashing
+   - Secure token storage
+   - HTTPS enforcement
+   - Rate limiting
+
+3. **Error Handling**:
+   - Invalid credentials
+   - Network failures
+   - Server errors
+   - Validation errors
+
+### UI/UX Features
+1. **Form Design**:
+   - Clean, minimalist layout
+   - Responsive design
+   - Clear error messages
+   - Loading states
+   - Success feedback
+
+2. **Navigation**:
+   - Smooth transitions
+   - Protected routes
+   - Redirect handling
+   - Browser history management
+
+### Integration Points
+1. **API Endpoints**:
+   ```javascript
+   POST /api/auth/login    // User login
+   POST /api/auth/signup   // User registration
+   POST /api/auth/logout   // User logout
+   GET  /api/auth/verify   // Token verification
+   ```
+
+2. **State Management**:
+   - Global auth context
+   - Local form state
+   - Persistent login
+   - Token refresh logic
