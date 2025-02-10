@@ -220,6 +220,110 @@
    - Smooth scrolling behavior
    - Route management
 
+### 9. Contact Page (`Contact.jsx`)
+- **Purpose**: Display company contact information and career opportunities
+- **Component Structure**:
+  1. **Header Section**:
+     - Title "CONTACT US"
+     - Styled with gray color scheme
+     - Centered alignment
+
+  2. **Main Content**:
+     - Two-column layout (mobile responsive)
+     - Left: Contact image
+     - Right: Contact information
+
+  3. **Information Sections**:
+     - Office address
+     - Contact details
+     - Career opportunities
+     - Call-to-action button
+
+#### Features
+1. **Responsive Design**:
+   - Mobile-first approach
+   - Flex column on mobile
+   - Two-column layout on desktop (md breakpoint)
+   - Adaptive image sizing
+
+2. **Visual Elements**:
+   - Contact illustration
+   - Consistent typography
+   - Brand color scheme
+   - Interactive button
+
+3. **Contact Details**:
+   ```
+   Location: Karve Statue Kothrud, Pune-411008, India
+   Phone: +91 8787898091
+   Email: bookmydoctor@gmail.com
+   ```
+
+#### Technical Implementation
+1. **Component Import**:
+   - React framework
+   - Assets import for images
+
+2. **Styling**:
+   - Tailwind CSS classes
+   - Responsive utilities:
+     - flex-col/row
+     - width adjustments
+     - padding/margin
+   - Interactive hover effects
+   - Smooth transitions
+
+3. **Button Features**:
+   - Border styling
+   - Hover animation
+   - Color transition
+   - Padding optimization
+
+#### CSS Classes
+```css
+Main Container:
+- flex flex-col
+- items-center
+- justify-center
+- gap-10
+- md:flex-row
+
+Image:
+- w-full
+- md:max-w-[360px]
+
+Typography:
+- text-gray-500/600/700
+- text-sm/lg/2xl
+- font-semibold
+
+Button:
+- border
+- rounded-lg
+- border-black
+- px-8 py-4
+- hover:bg-black
+- hover:text-white
+- transition-all
+- duration-500
+```
+
+#### Usage Guidelines
+1. **Image Requirements**:
+   - Contact illustration
+   - Responsive sizing
+   - Alt text for accessibility
+
+2. **Content Updates**:
+   - Address modification
+   - Contact details changes
+   - Career section updates
+
+3. **Maintenance**:
+   - Regular contact validation
+   - Link updates
+   - Career openings sync
+
 ## 🔧 Technical Implementation
 
 ### Routing Structure
