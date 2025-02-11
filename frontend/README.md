@@ -539,3 +539,157 @@ npm run build
    - Local form state
    - Persistent login
    - Token refresh logic
+
+### 10. MyAppointments Component (`MyAppointments.jsx`)
+- **Purpose**: Display and manage user's appointments
+- **Component Structure**:
+  1. **Header Section**:
+     - Title "My Appointments"
+     - Filter options (Upcoming/Past)
+     - Search functionality
+
+  2. **Appointments List**:
+     - Appointment cards
+     - Sorting options
+     - Pagination
+
+#### Features
+1. **Appointment Cards**:
+   - Doctor information
+   - Date and time
+   - Status indicator
+   - Action buttons
+   - Booking reference
+
+2. **Filtering & Sorting**:
+   - By date
+   - By status
+   - By doctor name
+   - By speciality
+
+3. **Appointment Management**:
+   - Cancel appointment
+   - Reschedule option
+   - View details
+   - Download prescription
+
+#### State Management
+```javascript
+appointments    // List of user appointments
+filterType      // Current filter selection
+searchQuery     // Search input value
+currentPage     // Pagination state
+sortBy         // Current sort criteria
+```
+
+#### Technical Implementation
+1. **Data Fetching**:
+   ```javascript
+   useEffect(() => {
+     // Fetch user appointments
+     // Apply filters
+     // Update state
+   }, [filterType, searchQuery, currentPage])
+   ```
+
+2. **Appointment Card Structure**:
+   ```javascript
+   {
+     id: string,
+     doctorId: string,
+     doctorName: string,
+     speciality: string,
+     date: Date,
+     time: string,
+     status: 'upcoming' | 'completed' | 'cancelled',
+     reference: string
+   }
+   ```
+
+3. **User Actions**:
+   - View appointment details
+   - Cancel appointment
+   - Request rescheduling
+   - Leave feedback
+
+#### UI Components
+1. **Filter Section**:
+   - Toggle buttons
+   - Search input
+   - Date range picker
+   - Sort dropdown
+
+2. **Appointment List**:
+   - Grid/List view toggle
+   - Responsive card layout
+   - Status badges
+   - Action buttons
+
+3. **Empty States**:
+   - No appointments
+   - No search results
+   - Error states
+
+#### Integration Points
+1. **API Endpoints**:
+   ```javascript
+   GET    /api/appointments        // Fetch appointments
+   PATCH  /api/appointments/:id    // Update appointment
+   DELETE /api/appointments/:id    // Cancel appointment
+   POST   /api/appointments/reschedule
+   ```
+
+2. **Context Usage**:
+   - User context for authentication
+   - Toast context for notifications
+   - Loading context for states
+
+#### Styling
+```css
+Container:
+- max-w-7xl
+- mx-auto
+- px-4
+- py-8
+
+Cards:
+- rounded-lg
+- shadow-md
+- hover:shadow-lg
+- transition-all
+
+Status Badges:
+- upcoming: bg-green-100 text-green-800
+- completed: bg-gray-100 text-gray-800
+- cancelled: bg-red-100 text-red-800
+```
+
+#### Error Handling
+1. **Network Errors**:
+   - Retry mechanism
+   - Error messages
+   - Fallback UI
+
+2. **User Feedback**:
+   - Success messages
+   - Error notifications
+   - Loading states
+
+#### Best Practices
+1. **Performance**:
+   - Pagination
+   - Lazy loading
+   - Debounced search
+   - Memoized components
+
+2. **Accessibility**:
+   - ARIA labels
+   - Keyboard navigation
+   - Focus management
+   - Screen reader support
+
+3. **Mobile Optimization**:
+   - Touch targets
+   - Swipe actions
+   - Responsive layout
+   - Bottom sheet details
