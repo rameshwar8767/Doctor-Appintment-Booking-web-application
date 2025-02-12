@@ -72,24 +72,83 @@ The system includes a comprehensive user model with the following features:
    - Case-insensitive data storage
    - Structured data validation
 
-### Data Model Specifics
+## Core Functionality
 
-```javascript
-User {
-    name: String       // Required, trimmed, lowercase
-    email: String      // Required, unique, trimmed, lowercase
-    phone: String      // Required, unique, trimmed
-    password: String   // Required
-    image: String      // Optional, includes default avatar
-    address: {         // Optional object with default structure
-        line1: String
-        line2: String
-    }
-    gender: String     // Optional, defaults to "Not Selected"
-    dob: String       // Optional, defaults to "Not Selected"
-    timestamps: true   // Automatically managed
-}
-```
+### 1. Doctor Management System
+- **Doctor Registration**
+  - Complete doctor profile creation
+  - Secure password hashing using bcrypt
+  - Image upload with Cloudinary integration
+  - Validation for required fields and email format
+  - Professional details storage (speciality, degree, experience)
+
+- **Doctor Profile**
+  - Comprehensive information storage
+  - Fee structure management
+  - Experience tracking
+  - Address and contact details
+  - Professional credentials validation
+
+### 2. User Management System
+- **Profile Management**
+  - Secure user registration and authentication
+  - Profile image handling with default avatar
+  - Address management with structured format
+  - Personal information tracking (gender, DOB)
+
+- **Data Security**
+  - Password encryption
+  - Unique email and phone validation
+  - Case-insensitive data handling
+  - Automatic timestamp tracking
+
+### 3. Technical Implementation
+- **Database Operations**
+  ```javascript
+  Doctor Schema {
+      name, email, phone: String (required, unique)
+      password: String (hashed)
+      speciality, degree, experience: String
+      fees: Number
+      image: String (Cloudinary URL)
+      address: Object
+      status: Boolean
+  }
+
+  User Schema {
+      name: String       // Required, trimmed, lowercase
+      email: String      // Required, unique, trimmed, lowercase
+      phone: String      // Required, unique, trimmed
+      password: String   // Required
+      image: String      // Optional, includes default avatar
+      address: {         // Optional object with default structure
+          line1: String
+          line2: String
+      }
+      gender: String     // Optional, defaults to "Not Selected"
+      dob: String       // Optional, defaults to "Not Selected"
+      timestamps: true   // Automatically managed
+  }
+  ```
+
+- **API Security**
+  - Input validation
+  - Error handling
+  - Secure file upload
+  - CORS protection
+
+### 4. System Features
+- **Image Processing**
+  - Cloudinary integration
+  - Automatic image optimization
+  - Secure URL generation
+  - Default avatar support
+
+- **Data Validation**
+  - Email format verification
+  - Required field checking
+  - Password strength validation
+  - Phone number format checking
 
 ## Technical Stack
 

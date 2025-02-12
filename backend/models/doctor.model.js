@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
-import { trim } from "validator";
+import pkg from 'validator';
+const { trim } = pkg;
 
 const doctorSchema = new mongoose.Schema({
     name:{
@@ -69,4 +70,5 @@ const doctorSchema = new mongoose.Schema({
 
 },{minimize: false , timestamps: true});
 
-export const Doctor =mongoose.models.Doctor || mongoose.model('Doctor',doctorSchema);
+ const Doctor = mongoose.models.Doctor || mongoose.model('Doctor',doctorSchema);
+ export default Doctor;
