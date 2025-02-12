@@ -693,3 +693,153 @@ Status Badges:
    - Swipe actions
    - Responsive layout
    - Bottom sheet details
+
+## 🔍 Detailed Component Functionality
+
+### Navigation Component (`Navbar.jsx`)
+#### Core Features
+1. **Responsive Navigation**
+   - Desktop menu with full options
+   - Mobile hamburger menu
+   - Smooth transitions
+
+2. **Authentication States**
+   - Logged-in user profile dropdown
+   - Guest user login/signup buttons
+   - Dynamic menu updates
+
+3. **Profile Management**
+   - Profile picture display
+   - Dropdown menu with options:
+     - My Profile
+     - My Appointments
+     - Logout
+   - Hover-based interaction
+
+#### State Management
+```javascript
+showMenu: boolean    // Controls mobile menu visibility
+token: boolean      // Manages authentication state
+```
+
+#### Navigation Links
+- HOME
+- ALL DOCTORS
+- ABOUT
+- CONTACT
+
+#### Mobile Menu Features
+- Slide-in animation
+- Full-screen overlay
+- Close button
+- Responsive link layout
+
+#### Technical Implementation
+1. **Route Handling**
+   ```javascript
+   useNavigate() for programmatic navigation
+   NavLink for active route styling
+   ```
+
+2. **Responsive Classes**
+   - Hidden/visible based on breakpoints
+   - Flexible layout adaptation
+   - Touch-friendly mobile UI
+
+3. **User Experience**
+   - Smooth transitions
+   - Clear visual hierarchy
+   - Intuitive interactions
+
+### Doctors Component (`Doctors.jsx`)
+#### Core Features
+1. **Dynamic Filtering**
+   - Specialty-based filtering
+   - URL parameter integration
+   - Real-time updates
+
+2. **Doctor Cards**
+   - Profile image
+   - Availability status
+   - Name and specialty
+   - Interactive hover effects
+
+3. **Filter Panel**
+   - Mobile-responsive toggle
+   - Specialty categories
+   - Active state indication
+
+#### State Management
+```javascript
+filterDoc: Doctor[]     // Filtered doctors list
+showFilter: boolean     // Mobile filter visibility
+speciality: string     // URL parameter tracking
+```
+
+#### Filter Categories
+- General physician
+- Gynecologist
+- Dermatologist
+- Pediatricians
+- Neurologist
+- Gastroenterologist
+
+#### Technical Implementation
+1. **Data Flow**
+   ```javascript
+   URL Params → Filter Logic → Display Update
+   ```
+
+2. **Filter Logic**
+   ```javascript
+   useEffect(() => {
+     if(speciality) {
+       filter by specialty
+     } else {
+       show all doctors
+     }
+   }, [doctors, speciality])
+   ```
+
+3. **Responsive Design**
+   - Grid layout for cards
+   - Flexible filter panel
+   - Mobile-first approach
+
+#### User Interactions
+1. **Filter Selection**
+   - Click to toggle specialty
+   - Active state feedback
+   - Route parameter updates
+
+2. **Doctor Selection**
+   - Card hover animation
+   - Click navigation
+   - Smooth transitions
+
+3. **Mobile Experience**
+   - Filter toggle button
+   - Collapsible filter panel
+   - Touch-friendly targets
+
+#### Performance Optimizations
+1. **Rendering**
+   - Efficient list updates
+   - Memoized filter results
+   - Optimized image loading
+
+2. **Navigation**
+   - Smart routing
+   - State persistence
+   - Smooth transitions
+
+#### Error Handling
+1. **Data Validation**
+   - Specialty verification
+   - Image fallbacks
+   - Empty state handling
+
+2. **User Feedback**
+   - Loading states
+   - Error messages
+   - Filter status
