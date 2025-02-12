@@ -14,3 +14,9 @@
 ::-webkit-scrollbar{
     @apply hidden
 }
+
+@media (max-width:740px){
+    .active p{
+        @apply text-white bg-primary border border-gray-500 rounded-lg px-3 py-1
+    }
+}
