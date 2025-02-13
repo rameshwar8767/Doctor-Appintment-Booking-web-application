@@ -72,6 +72,111 @@ The system includes a comprehensive user model with the following features:
    - Case-insensitive data storage
    - Structured data validation
 
+## Detailed Functionality
+
+### 1. Authentication System
+- **Admin Authentication**
+  - Secure JWT-based authentication
+  - Environment-based admin credentials
+  - Protected admin routes with middleware verification
+  - Token-based session management
+
+- **Security Features**
+  - Password hashing using bcrypt
+  - JWT token generation and validation
+  - Protected route middleware
+  - Request validation and sanitization
+
+### 2. Doctor Management
+- **Profile Creation and Management**
+  ```javascript
+  Doctor Registration Features:
+  - Name, Email, Phone validation
+  - Password hashing & security
+  - Professional details verification
+  - Unique constraint checking
+  - Image upload & optimization
+  - Address formatting & validation
+  ```
+
+- **Document Processing**
+  - Image upload to Cloudinary
+  - Secure URL generation
+  - File type validation
+  - Size optimization
+  - Automatic cleanup
+
+### 3. Data Management
+- **MongoDB Integration**
+  - Mongoose schema validation
+  - Indexed fields for optimization
+  - Timestamp tracking
+  - Cascade operations
+  - Error handling
+
+- **Data Validation Rules**
+  ```javascript
+  Validation Checks:
+  - Email format verification
+  - Phone number formatting
+  - Required field validation
+  - Type checking
+  - Length restrictions
+  - Unique field verification
+  ```
+
+### 4. API Architecture
+- **RESTful Endpoints**
+  ```javascript
+  Admin Routes:
+  POST /api/admin/login      // Admin authentication
+  POST /api/admin/doctor     // Add new doctor
+  GET  /api/admin/doctors    // List all doctors
+
+  Doctor Routes:
+  POST /api/doctor/login     // Doctor authentication
+  GET  /api/doctor/profile   // Get doctor profile
+  PUT  /api/doctor/profile   // Update doctor profile
+  ```
+
+### 5. Error Handling
+- **Comprehensive Error Management**
+  - Validation errors
+  - Authentication failures
+  - Database operation errors
+  - File upload issues
+  - Network failures
+  - Custom error responses
+
+### 6. File Management
+- **Image Processing Pipeline**
+  ```javascript
+  Upload Process:
+  1. File validation
+  2. Size optimization
+  3. Cloudinary upload
+  4. URL generation
+  5. Database update
+  6. Cleanup
+  ```
+
+### 7. Security Features
+- **Multi-layer Security**
+  - Input sanitization
+  - XSS protection
+  - CSRF protection
+  - Rate limiting
+  - Request validation
+  - Secure headers
+
+### 8. Database Operations
+- **Optimized Query Handling**
+  - Indexed searches
+  - Efficient updates
+  - Atomic operations
+  - Transaction support
+  - Cascade deletions
+
 ## Core Functionality
 
 ### 1. Doctor Management System
